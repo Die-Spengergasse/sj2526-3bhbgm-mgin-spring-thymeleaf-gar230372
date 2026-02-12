@@ -11,18 +11,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.time.format.DateTimeFormatter;
 
-@Controller
+@Controller //das ist notation die drauf sein muss damit springboot weiß dass das eine controller klasse ist, die für die anfragen zuständig ist
 @RequestMapping("/patient")
 public class PatientController {
-    private final PatientRepository patientRepository;
+    private final PatientRepository patientRepository; //kein "new" mehr nötig, springboot erstellt automatisch eine instanz von patientrepository und injiziert sie hier rein
 
     public PatientController(PatientRepository patientRepository) {
         this.patientRepository = patientRepository;
     }
-
+    //springboot findet patient repository, macht eine instanz davon
     @GetMapping("/list")
     public String patients(Model model) {
-        model.addAttribute("patients", patientRepository.findAll());
+        model.addAttribute("patients", patientRepository.findAll()); //findall holt alle patienten aus db und übergibt sie als liste
         return "patlist";
     }
 
@@ -34,7 +34,7 @@ public class PatientController {
 
     @PostMapping("/add")
     public String addPatient(@ModelAttribute("patient") Patient patient) {
-        patientRepository.save(patient);
+        patientRepository.save(patient); //einfügen neuer patienten in db
         return  "redirect:/patient/list";
     }
 }
