@@ -1,4 +1,8 @@
 package at.spengergasse.spring_thymeleaf.entities;
 
-public interface ObstRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface ObstRepository extends JpaRepository<Obst, Integer> {
 }

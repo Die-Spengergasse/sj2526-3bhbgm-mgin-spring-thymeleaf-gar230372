@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Obst Liste</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="container">
+    <table class="table">
+      <thead>
+      <tr>
+        <th>Name</th>
+        <th>Gewicht</th>
+        <th>Preis</th>
+        <th>Haltbarkeitsdatum</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr th:each="o : ${obst}">
+        <td th:text="${o.bezeichnung}"></td>
+        <td th:text="${o.gewicht}"></td>
+        <td th:text="${o.preis}"></td>
+        <td th:text="${o.haltbarBis}"></td>
+        <td><a th:href="@{/edit(id=${o.id})}">Edit Obst</a></td>
+      </tr>
+      </tbody>
+
+    </table>
+
+    <p>
+      <a href="/obst/add">new obst</a>
+    </p>
+  </div>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hinzufügen von Obst</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="container">
+    <form th:action="@{/obst/add}" th:object="${obst}" method="post">
+      <input type="text" th:field="*{bezeichnung}" class="form-control" placeholder="obst bezeichnung">
+        birth date <input type="date" th:field="*{haltbarBis}" class="form-control">
+      <input type="submit" class="form-control" value="Save">
+    </form>
+  </div>
+</body>
+</html>

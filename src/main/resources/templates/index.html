@@ -2,17 +2,19 @@
 <html lang="en" xmlns:th="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
-    <title>Greeting</title>
+    <title>Obstverwaltung</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 </head>
 <body>
 <div class="container">
-    <h1>Hallo</h1>
-    Datum: <span th:text="${today}"></span> //th steht für thymeleaf, text gehört auch noch dazu
-    //heutiges datum wird auf seite eingebaut und schickt fertige seite zurück zum browser
+    <h1>Obst Verwaltung</h1>
+    Datum: <span th:text="${today}"></span>
     <div>
-        <a href="/patient/list">patient list</a>
+        <a href="/obst/list">obst list</a>
     </div>
 </div>
 </body>
 </html>
+
+<!--th steht für thymeleaf, text gehört auch noch dazu
+heutiges datum wird auf seite eingebaut und schickt fertige seite zurück zum browser-->
