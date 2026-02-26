@@ -39,5 +39,11 @@ public class ObstController {
         return "add_obst";
     }
 
+    @GetMapping("/delete")
+    public String deleteObst(Obst obst) {
+        obstRepository.deleteById(obst.getId());
+        return "redirect:/obst/list";
+    }
+
 
 }

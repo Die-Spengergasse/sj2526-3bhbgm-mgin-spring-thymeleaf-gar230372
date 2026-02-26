@@ -23,6 +23,7 @@
         <td th:text="${o.preis}"></td>
         <td th:text="${o.haltbarBis}"></td>
         <td><a th:href="@{/obst/edit(id=${o.id})}">Edit Obst</a></td>
+        <td><a th:href="@{/obst/delete(id=${o.id})}">Delete Obst</a></td>
       </tr>
       </tbody>
 
