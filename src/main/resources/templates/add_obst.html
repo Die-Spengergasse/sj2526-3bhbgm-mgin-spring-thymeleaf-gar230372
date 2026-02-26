@@ -9,7 +9,7 @@
   <div class="container">
       <h1>Hinzufügen/Bearbeiten vom Obst</h1>
     <form th:action="@{/obst/add}" th:object="${obst}" method="post">
-        <input type="hidden" th:field="*{id}">
+        <input type="hidden" th:field="*{id}"> <!--verstecktes attribut nötig damit edit und delete funktionierten-->
         <input type="text" th:field="*{bezeichnung}" class="form-control" placeholder="obst bezeichnung">
         Gewicht: <input type="number" th:field="*{gewicht}" class="form-control" placeholder="obst gewicht">
         Preis: <input type="number" th:field="*{preis}" class="form-control" placeholder="obst preis">
