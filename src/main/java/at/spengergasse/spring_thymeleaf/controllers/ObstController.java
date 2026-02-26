@@ -34,9 +34,9 @@ public class ObstController {
     }
 
     @GetMapping("/edit")
-    public String editObst(Model model){
-        //model.addAttribute(@RequestParam)
-        return "edit_obst";
+    public String editObst(Model model, Obst obst){
+        model.addAttribute("id", obstRepository.findById(obst.getId()));
+        return "add_obst";
     }
 
 

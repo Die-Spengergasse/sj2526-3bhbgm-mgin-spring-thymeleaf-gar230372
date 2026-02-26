@@ -7,9 +7,12 @@
 </head>
 <body>
   <div class="container">
+      <h1>Hinzufügen/Bearbeiten vom Obst</h1>
     <form th:action="@{/obst/add}" th:object="${obst}" method="post">
       <input type="text" th:field="*{bezeichnung}" class="form-control" placeholder="obst bezeichnung">
-        birth date <input type="date" th:field="*{haltbarBis}" class="form-control">
+        Gewicht: <input type="number" th:field="*{gewicht}" class="form-control" placeholder="obst gewicht">
+        Preis: <input type="number" th:field="*{preis}" class="form-control" placeholder="obst preis">
+        Haltbar bis: <input type="date" th:field="*{haltbarBis}" class="form-control">
       <input type="submit" class="form-control" value="Save">
     </form>
   </div>
