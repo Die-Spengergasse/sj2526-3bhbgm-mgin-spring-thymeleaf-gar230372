@@ -33,9 +33,16 @@ public class ObstController {
         return "redirect:/obst/list";
     }
 
-    @GetMapping("/edit")
+    /*@GetMapping("/edit")
     public String editObst(Model model, Obst obst){
         model.addAttribute("id", obstRepository.findById(obst.getId()));
+        return "add_obst";
+    }*/
+
+    @GetMapping("/edit")
+    public String editObst(@RequestParam int id, Model model) {
+        Obst obst = obstRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("Invalid obst Id:" + id));
+        model.addAttribute("obst", obst);
         return "add_obst";
     }
 
