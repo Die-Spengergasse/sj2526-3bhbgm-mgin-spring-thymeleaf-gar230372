@@ -26,6 +26,7 @@ public class PatientController {
         return "patlist";
     }
 
+
     @GetMapping("/add")
     public String addPatient(Model model) {
         model.addAttribute("patient", new Patient());

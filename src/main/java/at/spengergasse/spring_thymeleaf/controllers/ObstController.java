@@ -37,6 +37,7 @@ public class ObstController {
     }
 
     //Obst bearbeiten (nach der Erstellung)
+    //um genau dieses obst zu bearbeiten wird es mit der id gesucht, wird das nicht gemacht, würde ein neues obst angelegt werden
     @GetMapping("/edit")
     public String editObst(@RequestParam int id, Model model) {
         Obst obst = obstRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("Invalid obst Id:" + id)); //sucht das obst mit der id, damit kein neues erstellt wird und speichert die id in dem objekt "obst"
